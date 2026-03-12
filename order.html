@@ -15,7 +15,7 @@
 alert("Welcome to the Store!");
 
 
-let name = prompt("What is your name?");
+let customerName = prompt("What is your name?");
 let item = prompt("What item would you like to order?");
 let quantity = prompt("How many would you like? (1-99)");
 
@@ -33,7 +33,7 @@ if (hour < 12) {
 
 
 document.getElementById("greeting").innerHTML =
-    `${greetingText} ${name}, Thank you for ordering!`;
+    `${greetingText} ${customerName}, Thank you for ordering!`;
 
 
 document.getElementById("summary").innerHTML =
