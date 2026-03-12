@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Order</title>
+</head>
+<body>
+
+<h1 id="greetings"></h1>
+<p id="summary"></p>
+<p id="arrival"></p>
+
+<script>
+alert("Welcome to the Store!");
+
+
+let name = prompt("What is your name?");
+let item = prompt("What item would you like to order?");
+let quantity = prompt("How many would you like? (1-99)");
+
+let now = new Date();
+let hour = now.getHours();
+let greetingText = "";
+
+if (hour < 12) {
+    greetingText = "Good Morning";
+} else if (hour < 18) {
+    greetingText = "Good Afternoon";
+} else {
+    greetingText = "Good Evening";
+}
+
+
+document.getElementById("greeting").innerHTML =
+    `${greetingText} ${name}, Thank you for ordering!`;
+
+
+document.getElementById("summary").innerHTML =
+    `You ordered <strong>${quantity}</strong> of <strong>${item}</strong>.`;
+
+
+let arrivalDate = new Date();
+arrivalDate.setDate(arrivalDate.getDate() + 7);
+
+document.getElementById("arrival").innerHTML =
+    `Your order will arrive on: <strong>${arrivalDate.toDateString()}</strong>.`;
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
