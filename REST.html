@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Fact-id</th>
+      <th scope="col">Facts</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+  </tbody>
+</table>
+        </div>
+    </section>
+
+    <script>
+    const url = "https://brianobruno.github.io/cats.json";
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            
+            const facts = data.facts;
+
+        
+            facts.sort((a, b) => a.factId - b.factId);
+
+        
+            const tbody = document.getElementById('tbody');
+            tbody.innerHTML = facts.map(item => `
+                <tr class="table-success">
+                    <td>${item.factId}</td>
+                    <td>${item.text}</td>
+                </tr>
+            `).join('');
+        });
+</script>
+</body>
+</html>
