@@ -9,6 +9,7 @@
 <body>
     <section>
         <div>
+              <button onclick = fetchAPI()>Fetch</button>
             <table class="table">
   <thead>
     <tr>
@@ -19,12 +20,16 @@
   <tbody id="tbody">
   </tbody>
 </table>
+<img src="", id="image">
         </div>
     </section>
 
     <script>
     const url = "https://brianobruno.github.io/cats.json";
 
+
+    const fetchAPI = async () => 
+    {
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -42,7 +47,17 @@
                     <td>${item.text}</td>
                 </tr>
             `).join('');
+
+
+            const image = document.getElementById('image')
+            image.src = data.catPhoto
         });
+
+    }
+
+
+        
+    
 </script>
 </body>
 </html>
