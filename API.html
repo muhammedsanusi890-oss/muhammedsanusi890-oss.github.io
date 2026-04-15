@@ -1,0 +1,41 @@
+<script>
+  async function search() {
+    const query = document.getElementById("searchInput").value;
+
+    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&media=music&entity=song&limit=20`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      displayResults(data.results);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function displayResults(items) {
+    const container = document.getElementById("results");
+    container.innerHTML = "";
+
+    items.forEach(item => {
+      const col = document.createElement("div");
+      col.className = "col-md-3 mb-4";
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm">
+          <img src="${item.artworkUrl100}" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">${item.trackName}</h6>
+            <p class="card-text text-muted">${item.artistName}</p>
+            <small>${item.collectionName}</small>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <audio controls src="${item.previewUrl}" style="width:100%"></audio>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(col);
+    });
+  }
+</script>
