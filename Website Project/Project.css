@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+     background: #1a0b2e;
+     color: #fff;
+    font-family: 'Caveat Brush', cursive;
+}
+
+.itunes-text {
+    background: linear-gradient(90deg, #fb5dad, #55fb9f, #b97aff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+}
+
+
+
+.body-container{
+    padding :30px; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+i{
+    font-size: 35px;
+}
+
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+     width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(185, 122, 255, 0.4);
+
+}
+
+.heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.socials{
+    padding : 20px; 
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #1a0b2e, #1a0b2e);;
+    margin : 20px 0px 0px 0px;
+    min-height: 100vh;
+}
+
+
+.banner-content{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin-top : 150px; 
+    padding : 30px; 
+    min-height : 40vh;
+    min-width : 50vh;
+    justify-content : space-evenly;
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+     border: 1px solid rgba(185, 122, 255, 0.4);
+
+}
+
+.banner-content p  {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ddd;
+}
+.btn{
+    color: white;
+    padding : 10px 20px;
+    background: linear-gradient(90deg, #fb5dad, #55fb9f, #b97aff);
+    background-size: 300% 300%;
+    color: transparent;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-position 0.5s;
+}
+
+
+.btn-text{
+    color : antiquewhite !important;
+}
+
+
