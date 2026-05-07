@@ -5,7 +5,7 @@ async function TrackDetails(trackId) {
     const url = `https://itunes.apple.com/lookup?id=${trackId}`;
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-store' });
         const data = await response.json();
         displayDetails(data.results[0]);
     } catch (error) {
