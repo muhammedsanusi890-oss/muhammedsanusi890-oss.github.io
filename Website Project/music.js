@@ -1,9 +1,10 @@
 async function search() {
     const query = document.getElementById('input-search').value;
-    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=musicTrack&limit=10`;
+    // Cache-bust to avoid poisoned CORS responses cached from other origins (e.g. Live Server).
+    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=musicTrack&limit=10&_=${Date.now()}`;
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-store' });
         const data = await response.json();
         displayResults(data.results);
     } catch (error) {

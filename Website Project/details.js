@@ -2,10 +2,11 @@ const params = new URLSearchParams(window.location.search);
 const trackId = params.get('id');
 
 async function TrackDetails(trackId) {
-    const url = `https://itunes.apple.com/lookup?id=${trackId}`;
+    // Cache-bust to avoid poisoned CORS responses cached from other origins (e.g. Live Server).
+    const url = `https://itunes.apple.com/lookup?id=${trackId}&_=${Date.now()}`;
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-store' });
         const data = await response.json();
         displayDetails(data.results[0]);
     } catch (error) {
